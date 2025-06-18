@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f4f4f4;
+  overflow-x: hidden;
+}
+
+header {
+    /* Controls the header container */
+    width: 100%; /* Full width of the page */
+    height: 420px; /* Set the height you want */
+    display: flex; /* Enables flexible alignment */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    position: relative; /* If you want to position absolute inside */
+    /* Add padding or margins if needed */
+}
+
+    header img#header-logo {
+        width: 420px; /* Set the width of the logo */
+        height: auto; /* Keeps aspect ratio */
+        /* You can also use height if you prefer fixed height */
+        object-fit: contain; /* Ensures the image fits nicely */
+        /* You can add margin, padding, or transform here */
+        cursor: pointer; /* If you want a hover effect */
+    }
+
+}
+
+header img {
+  max-width: 200px;
+}
+
+#parallax-container {
+  position: relative;
+  height: 200vh; /* Enough space to scroll */
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  transform: translate(var(--x), var(--y));
+}
+
+.parallax-layer img {
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#contact {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 250px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #222;
+    color: white;
+    font-size: 1rem;
+}
+
+.stick-right {
+    right: 0;
+    left: auto;
+}
+
+#background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100; /* way below all layers */
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/paperBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    image-rendering: auto;
+}
+
+#background-anim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -100;
+    pointer-events: none;
+    animation: bgLoop 0.45s steps(1) infinite;
+}
+
+@keyframes bgLoop {
+    0% {
+        background-image: url("images/paperBG1.png");
+    }
+
+    20% {
+        background-image: url("images/paperBG2.png");
+    }
+
+    40% {
+        background-image: url("images/paperBG3.png");
+    }
+
+    60% {
+        background-image: url("images/paperBG4.png");
+    }
+
+    80% {
+        background-image: url("images/paperBG5.png");
+    }
+}
+
+.scroll-hint {
+    width: 150px;
+    height: auto; /* optional: or set a fixed height */
+    aspect-ratio: 1 / 1; /* adjust this to match your image shape */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    image-rendering: auto;
+    animation: scrollAnim 0.25s steps(1) infinite;
+}
+
+
+/* Optional: prevent scaling below native size */
+@media (max-width: 1920px), (max-height: 1080px) {
+    #background-image {
+        background-size: 1920px 1080px;
+    }
+}
+#white-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: -50; /* make sure it's above the background but below other layers */
+}
