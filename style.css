@@ -86,41 +86,6 @@ footer {
     image-rendering: auto;
 }
 
-#background-anim {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    z-index: -100;
-    pointer-events: none;
-    animation: bgLoop 0.45s steps(1) infinite;
-}
-
-@keyframes bgLoop {
-    0% {
-        background-image: url("images/paperBG1.png");
-    }
-
-    20% {
-        background-image: url("images/paperBG2.png");
-    }
-
-    40% {
-        background-image: url("images/paperBG3.png");
-    }
-
-    60% {
-        background-image: url("images/paperBG4.png");
-    }
-
-    80% {
-        background-image: url("images/paperBG5.png");
-    }
-}
 
 .scroll-hint {
     width: 150px;

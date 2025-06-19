@@ -37,6 +37,8 @@ const scrollFrames = [
   "images/scrolldown3.png"
 ];
 
+
+
 let scrollIndex = 0;
 setInterval(() => {
   scrollIndex = (scrollIndex + 1) % scrollFrames.length;
