@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url('images/paperBG.webp');
+    background-size: cover; /* Scales image to fill the screen */
+    background-position: center; /* Keeps it centered */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Optional: makes it stay in place while scrolling */
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Just one column */
+    gap: 20px;
+    padding: 2rem 2rem 0 2rem;
+    margin-top: 200px;
+}
+
+.grid-layout img {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.grid-layout .img-small {
+    max-width: 400px;
+}
+
+.grid-layout .img-large {
+    max-width: 600px;
+}
+
+.nudge-left {
+    transform: translateX(-150px);
+}
+
+.nudge-right {
+    transform: translateX(150px);
+}
+
+.grid-layout img.img-fullscreen {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    height: 300px;
+}
+
+.logo-wrapper {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 100px; /* Creates 100px space left and right *inside* the wrapper */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 190px;
+    display: inline-block;
+}
+
+
+.scroll-wrapper {
+    text-align: center;
+    position: relative;
+}
+
+.scroll-hint {
+    display: block;
+    margin: 0 auto;
+    left: 70%; /* horizontally centered relative to container */
+    max-width: 150px;
+    width: auto; /* Important */
+    height: auto;
+    position: absolute;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Important: doesn't block clicks */
+    z-index: 10; /* On top of grid */
+}
+
+.floating {
+
+    position: absolute;
+    height: auto;
+    transform-origin: center;
+
+    }
+
+.fixed-buttons {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.icon-button {
+    width: 50px;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+    .icon-button:hover {
+        transform: scale(1.1);
+    }
+
+@media (max-width: 600px) {
+    .icon-button {
+        width: 40px;
+    }
+
+    .fixed-buttons {
+        bottom: 30px;
+        right: 30px;
+    }
+}
